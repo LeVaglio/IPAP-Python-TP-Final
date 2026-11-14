@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Sustentabilidad</title>
+</head>
+<body>
+
+    <h1>Panel de Sustentabilidad</h1>
+
+    <h2>Emisiones globales</h2>
+
+    <p>
+        Total de emisiones:
+        {{ total_emisiones }} kg de CO2
+    </p>
+
+    <h2>Planta de mayor consumo</h2>
+
+    <p>
+        Planta: {{ planta_mayor_consumo }}
+    </p>
+
+    <p>
+        Consumo: {{ consumo_maximo }} kWh
+    </p>
+
+    <h2>Consumo por planta</h2>
+
+    {% for planta, consumo in consumo_por_planta.items %}
+        <p>{{ planta }}: {{ consumo }} kWh</p>
+    {% endfor %}
+
+</body>
+</html>

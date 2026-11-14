@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Sustentabilidad</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f7f4;
+        }
+
+        h1 {
+            color: #26734d;
+        }
+
+        .panel {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Panel de Sustentabilidad</h1>
+
+    <div class="panel">
+        <h2>Emisiones globales</h2>
+
+        <p>
+            Total de emisiones:
+            <strong>{{ total_emisiones }} kg de CO2</strong>
+        </p>
+    </div>
+
+    <div class="panel">
+        <h2>Planta de mayor consumo</h2>
+
+        <p>Planta: {{ planta_mayor_consumo }}</p>
+
+        <p>Consumo: {{ consumo_maximo }} kWh</p>
+    </div>
+
+    <div class="panel">
+        <h2>Consumo por planta</h2>
+
+            <table>
+                <tr>
+                    <th>Planta</th>
+                    <th>Consumo (kWh)</th>
+                </tr>
+
+                {% for planta, consumo in consumo_por_planta.items %}
+                <tr>
+                    <td>{{ planta }}</td>
+                    <td>{{ consumo }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+    </div>
+
+</body>
+</html>
